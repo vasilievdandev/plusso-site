@@ -5,22 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Plusso Terms of Use</title>
   <meta name="description" content="Terms of use and subscription terms for Plusso.">
+  <meta name="theme-color" content="#0f5a3a">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="./" data-page="./"><img src="img/icon.png" alt="" width="34" height="34">Plusso</a>
+    <nav></nav>
+      <label class="lang">
+        <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-globe"/></svg>
+        <span hidden data-t="language">Language</span>
+        <select aria-label="Language">
+          <option value="en">English</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="uk">Українська</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+        </select>
+        <svg class="icon chev" aria-hidden="true"><use href="img/icons.svg#i-chevron-down"/></svg>
+      </label>
+  </div>
+</header>
 <main>
-  <header><div class="logo">+</div><h1>Plusso</h1></header>
-  <nav class="langs">
-    <button data-lang="en">English</button>
-    <button data-lang="ro">Română</button>
-    <button data-lang="ru">Русский</button>
-    <button data-lang="uk">Українська</button>
-    <button data-lang="es">Español</button>
-    <button data-lang="de">Deutsch</button>
-    <button data-lang="it">Italiano</button>
-  </nav>
-
-  <section class="doc" lang="en">
+  <section class="doc card legal" lang="en">
     <h1>Terms of Use</h1>
     <p class="muted">Effective date: October 18, 2026</p>
     <p>These terms apply together with Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard License Agreement (EULA)</a>. By using Plusso you agree to them.</p>
@@ -44,7 +57,7 @@
     <p><a href="mailto:support@plusso.app">support@plusso.app</a></p>
   </section>
 
-  <section class="doc" lang="ro">
+  <section class="doc card legal" lang="ro">
     <h1>Termeni de utilizare</h1>
     <p class="muted">În vigoare de la: 18 octombrie 2026</p>
     <p>Acești termeni se aplică împreună cu <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Acordul standard de licență Apple (EULA)</a>. Folosind Plusso, ești de acord cu ei.</p>
@@ -68,7 +81,7 @@
     <p><a href="mailto:support@plusso.app">support@plusso.app</a></p>
   </section>
 
-  <section class="doc" lang="ru">
+  <section class="doc card legal" lang="ru">
     <h1>Условия использования</h1>
     <p class="muted">Дата вступления в силу: 18 октября 2026 г.</p>
     <p>Эти условия действуют вместе со <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Стандартным лицензионным соглашением Apple (EULA)</a>. Используя Plusso, вы соглашаетесь с ними.</p>
@@ -92,7 +105,7 @@
     <p><a href="mailto:support@plusso.app">support@plusso.app</a></p>
   </section>
 
-  <section class="doc" lang="uk">
+  <section class="doc card legal" lang="uk">
     <h1>Умови використання</h1>
     <p class="muted">Набирають чинності: 18 жовтня 2026 р.</p>
     <p>Ці умови діють разом зі <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Стандартною ліцензійною угодою Apple (EULA)</a>. Користуючись Plusso, ви погоджуєтеся з ними.</p>
@@ -116,7 +129,7 @@
     <p><a href="mailto:support@plusso.app">support@plusso.app</a></p>
   </section>
 
-  <section class="doc" lang="es">
+  <section class="doc card legal" lang="es">
     <h1>Condiciones de uso</h1>
     <p class="muted">Fecha de entrada en vigor: 18 de octubre de 2026</p>
     <p>Estas condiciones se aplican junto con el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de licencia estándar de Apple (EULA)</a>. Al usar Plusso, las aceptas.</p>
@@ -140,7 +153,7 @@
     <p><a href="mailto:support@plusso.app">support@plusso.app</a></p>
   </section>
 
-  <section class="doc" lang="de">
+  <section class="doc card legal" lang="de">
     <h1>Nutzungsbedingungen</h1>
     <p class="muted">Gültig ab: 18. Oktober 2026</p>
     <p>Diese Bedingungen gelten zusammen mit Apples <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard-Lizenzvereinbarung (EULA)</a>. Mit der Nutzung von Plusso stimmst du ihnen zu.</p>
@@ -164,7 +177,7 @@
     <p><a href="mailto:support@plusso.app">support@plusso.app</a></p>
   </section>
 
-  <section class="doc" lang="it">
+  <section class="doc card legal" lang="it">
     <h1>Termini di utilizzo</h1>
     <p class="muted">In vigore dal: 18 ottobre 2026</p>
     <p>Questi termini si applicano insieme al <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contratto di licenza standard di Apple (EULA)</a>. Usando Plusso li accetti.</p>
@@ -187,9 +200,14 @@
     <h2>Contatti</h2>
     <p><a href="mailto:support@plusso.app">support@plusso.app</a></p>
   </section>
-
-  <footer class="muted"><a href="index.html">Plusso</a> · <a href="privacy.html">Privacy Policy</a></footer>
 </main>
+<footer class="foot">
+  <a href="./" data-page="./">Plusso</a>
+  <a href="privacy.html" data-page="privacy.html" data-t="privacy">Privacy Policy</a>
+  <a href="mailto:support@plusso.app">support@plusso.app</a>
+  <span>© 2026 Plusso</span>
+</footer>
+<script src="text.js"></script>
 <script src="lang.js"></script>
 </body>
 </html>

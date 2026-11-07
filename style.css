@@ -1,45 +1,195 @@
+/* plusso.app — aceleași culori ca aplicația: verdele de marcă, fundalul „mint” cu bule de lumină,
+   carduri albe rotunjite (negre pe tema întunecată) și accentul auriu al monedei din iconiță. */
 :root {
-  --bg: #f7faf8;
-  --card: #ffffff;
-  --text: #0f1f17;
-  --muted: #5b6b63;
   --brand: #16a34a;
-  --border: #e3ebe6;
+  --brand-soft: rgba(22, 163, 74, 0.12);
+  --gold: #d4a237;
+  --gold-soft: rgba(212, 162, 55, 0.16);
+  --text: #09090b;
+  --muted: #71717a;
+  --card: rgba(255, 255, 255, 0.86);
+  --card-solid: #ffffff;
+  --border: #e4e4e7;
+  --bg-1: #e3fbf0;
+  --bg-2: #f4fef9;
+  --bg-3: #ffffff;
+  --blob-1: #a7f3d0;
+  --blob-2: #99f6e4;
+  --blob-3: #bbf7d0;
+  --blob-opacity: 0.55;
+  --shadow: 0 1px 2px rgba(9, 9, 11, 0.04), 0 12px 32px rgba(9, 9, 11, 0.06);
+  --radius: 20px;
+  color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0b1310;
-    --card: #121d18;
-    --text: #e8f1ec;
-    --muted: #9db0a6;
     --brand: #22c55e;
-    --border: #1f2e27;
+    --brand-soft: rgba(34, 197, 94, 0.14);
+    --gold: #e8bd57;
+    --gold-soft: rgba(232, 189, 87, 0.14);
+    --text: #fafafa;
+    --muted: #a1a1aa;
+    --card: rgba(24, 24, 27, 0.82);
+    --card-solid: #18181b;
+    --border: #27272a;
+    --bg-1: #03261c;
+    --bg-2: #01120d;
+    --bg-3: #000000;
+    --blob-1: #065f46;
+    --blob-2: #115e59;
+    --blob-3: #14532d;
+    --blob-opacity: 0.4;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.35);
   }
 }
+
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
   margin: 0;
-  background: var(--bg);
+  min-height: 100vh;
   color: var(--text);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
+  background-attachment: fixed;
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
-main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-.logo {
-  width: 44px; height: 44px; border-radius: 12px; background: var(--brand);
-  color: #fff; display: grid; place-items: center; font-size: 30px; font-weight: 700;
+/* Bulele de lumină din fundalul aplicației. */
+.blobs { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.blobs span { position: absolute; border-radius: 50%; filter: blur(70px); opacity: var(--blob-opacity); }
+.blobs span:nth-child(1) { width: 520px; height: 520px; top: -200px; right: -160px; background: var(--blob-1); }
+.blobs span:nth-child(2) { width: 440px; height: 440px; top: 38%; left: -220px; background: var(--blob-2); }
+.blobs span:nth-child(3) { width: 420px; height: 420px; bottom: -180px; right: -100px; background: var(--blob-3); }
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.15; margin: 0; }
+.icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* Bara de sus, din „sticlă”. */
+.top {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px);
+  background: color-mix(in srgb, var(--bg-3) 62%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
 }
-h1 { font-size: 28px; margin: 0; }
-h2 { font-size: 19px; margin: 28px 0 6px; }
-p, li { color: var(--text); }
-.muted { color: var(--muted); font-size: 14px; }
-a { color: var(--brand); }
-nav.langs { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 24px; }
-nav.langs button {
-  border: 1px solid var(--border); background: var(--card); color: var(--text);
-  border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 14px; cursor: pointer;
+.top-inner { max-width: 1080px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 700; font-size: 19px; }
+.brand:hover { text-decoration: none; }
+.brand img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); }
+.top nav { display: flex; gap: 22px; margin-left: auto; }
+.top nav a { color: var(--muted); font-size: 15px; font-weight: 500; }
+.top nav a:hover { color: var(--text); text-decoration: none; }
+.lang {
+  position: relative; display: flex; align-items: center; gap: 6px; color: var(--muted);
+  border: 1px solid var(--border); background: var(--card-solid); border-radius: 999px; padding: 6px 10px 6px 12px;
 }
-nav.langs button[aria-pressed='true'] { background: var(--brand); border-color: var(--brand); color: #fff; }
-section.doc { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 8px 20px 20px; }
+.lang .icon { width: 16px; height: 16px; }
+.lang select {
+  appearance: none; -webkit-appearance: none; border: 0; background: transparent; color: var(--text);
+  font: inherit; font-size: 14px; font-weight: 500; padding-right: 18px; cursor: pointer;
+}
+.lang .chev { position: absolute; right: 10px; pointer-events: none; }
+@media (max-width: 760px) { .top nav { display: none; } .lang { margin-left: auto; } }
+
+main { max-width: 1080px; margin: 0 auto; padding: 0 20px 64px; }
+
+/* Pagina principală. */
+.hero { text-align: center; padding: 72px 0 56px; }
+.hero-icon { width: 132px; height: 132px; border-radius: 30px; box-shadow: 0 24px 60px rgba(4, 60, 38, 0.35), 0 4px 12px rgba(0, 0, 0, 0.15); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 6px; margin: 28px 0 14px; padding: 6px 14px;
+  border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 14px; font-weight: 600;
+}
+.eyebrow .icon { width: 16px; height: 16px; }
+.hero h1 { font-size: clamp(40px, 7vw, 68px); font-weight: 800; }
+.hero h1 .plus { color: var(--brand); }
+.hero p { max-width: 640px; margin: 18px auto 0; color: var(--muted); font-size: 19px; }
+.cta {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; padding: 14px 24px;
+  border-radius: 999px; background: var(--text); color: var(--bg-3); font-weight: 600; font-size: 16px;
+}
+.cta .icon { width: 20px; height: 20px; }
+.price-note { display: block; margin-top: 14px; color: var(--muted); font-size: 14px; }
+
+section.block { margin-top: 72px; }
+.block > h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 800; text-align: center; margin-bottom: 28px; }
+
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 960px) { .features { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) {
+  .features { grid-template-columns: 1fr; gap: 10px; }
+  .feature { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; padding: 16px; }
+  .feature .tile { grid-row: span 2; margin: 0; }
+  .feature p { margin-top: 2px; }
+  .hero { padding: 48px 0 32px; }
+  section.block { margin-top: 56px; }
+}
+.feature { padding: 22px; }
+.tile {
+  width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center;
+  background: var(--brand-soft); color: var(--brand); margin-bottom: 14px;
+}
+.feature h3 { font-size: 18px; font-weight: 700; }
+.feature p { margin: 6px 0 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+
+.privacy-band {
+  display: flex; align-items: center; gap: 22px; padding: 30px; margin-top: 72px;
+  background: linear-gradient(135deg, #0f5a3a, #0a3d29); color: #fff; border: 0;
+}
+.privacy-band .tile { width: 60px; height: 60px; border-radius: 18px; background: rgba(255, 255, 255, 0.14); color: #fff; margin: 0; flex: none; }
+.privacy-band .tile .icon { width: 30px; height: 30px; }
+.privacy-band h2 { font-size: 26px; font-weight: 800; }
+.privacy-band p { margin: 6px 0 0; color: rgba(255, 255, 255, 0.82); }
+@media (max-width: 560px) { .privacy-band { flex-direction: column; align-items: flex-start; } }
+
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 860px; margin: 0 auto; }
+@media (max-width: 700px) { .plans { grid-template-columns: 1fr; } }
+.plan { padding: 26px; }
+.plan h3 { font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+.plan .sub { margin: 4px 0 18px; color: var(--muted); font-size: 15px; }
+.plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.plan li { display: flex; gap: 10px; font-size: 16px; }
+.plan li .icon { width: 20px; height: 20px; color: var(--brand); margin-top: 2px; }
+.plan.pro { border-color: color-mix(in srgb, var(--gold) 55%, var(--border)); background: linear-gradient(160deg, var(--gold-soft), var(--card) 55%); }
+.plan.pro h3 .icon { color: var(--gold); }
+.plan.pro li .icon { color: var(--gold); }
+
+.faq { max-width: 760px; margin: 0 auto; display: grid; gap: 10px; }
+.faq details { padding: 0 22px; }
+.faq summary {
+  list-style: none; cursor: pointer; padding: 18px 0; font-weight: 600; font-size: 17px;
+  display: flex; align-items: center; gap: 12px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary span { flex: 1; }
+.faq summary .icon { color: var(--muted); transition: transform 0.2s; }
+.faq details[open] summary .icon { transform: rotate(180deg); }
+.faq details p { margin: 0 0 18px; color: var(--muted); }
+
+.support { max-width: 760px; margin: 0 auto; padding: 30px; text-align: center; }
+.support p { color: var(--muted); margin: 8px 0 18px; }
+.mail {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px;
+  background: var(--brand); color: #fff; font-weight: 600;
+}
+.mail:hover { text-decoration: none; filter: brightness(1.05); }
+
+footer.foot {
+  max-width: 1080px; margin: 0 auto; padding: 28px 20px 40px; display: flex; flex-wrap: wrap; gap: 8px 20px;
+  justify-content: center; color: var(--muted); font-size: 14px;
+}
+footer.foot a { color: var(--muted); }
+
+/* Paginile legale (confidențialitate, termeni). */
+.legal { max-width: 800px; margin: 40px auto 0; padding: 8px 32px 32px; }
+@media (max-width: 560px) { .legal { padding: 4px 20px 24px; } }
+.legal h1 { font-size: clamp(26px, 7vw, 34px); font-weight: 800; margin: 28px 0 6px; overflow-wrap: anywhere; hyphens: auto; }
+.legal h2 { font-size: 20px; font-weight: 700; margin: 30px 0 6px; }
+.legal p, .legal li { color: var(--text); line-height: 1.65; }
+.legal .muted { color: var(--muted); font-size: 15px; }
 .js section.doc[hidden] { display: none; }
-footer { margin-top: 32px; }

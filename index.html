@@ -3,73 +3,178 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plusso</title>
-  <meta name="description" content="Plusso: personal budget for iPhone. Your data stays on your device.">
+  <title>Plusso: personal budget for iPhone</title>
+  <meta name="description" content="Plusso: personal budget for iPhone. Know how much you can spend today, split your salary into savings and reach your goals. Your data stays on your device.">
+  <meta name="theme-color" content="#0f5a3a">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://plusso.app/">
+  <meta property="og:title" content="Plusso: personal budget for iPhone">
+  <meta property="og:description" content="Know how much you can spend today, split your salary into savings and reach your goals. Your data stays on your iPhone.">
+  <meta property="og:image" content="https://plusso.app/img/og.jpg">
+  <meta name="twitter:card" content="summary">
 </head>
 <body>
+<div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="./"><img src="img/icon.png" alt="" width="34" height="34">Plusso</a>
+    <nav>
+      <a href="#features" data-t="navFeatures">Features</a>
+      <a href="#pro" data-t="navPro">Pro</a>
+      <a href="#faq" data-t="navFaq">FAQ</a>
+      <a href="#support" data-t="navSupport">Support</a>
+    </nav>
+      <label class="lang">
+        <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-globe"/></svg>
+        <span hidden data-t="language">Language</span>
+        <select aria-label="Language">
+          <option value="en">English</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="uk">Українська</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+        </select>
+        <svg class="icon chev" aria-hidden="true"><use href="img/icons.svg#i-chevron-down"/></svg>
+      </label>
+  </div>
+</header>
 <main>
-  <header><div class="logo">+</div><h1>Plusso</h1></header>
-  <nav class="langs">
-    <button data-lang="en">English</button>
-    <button data-lang="ro">Română</button>
-    <button data-lang="ru">Русский</button>
-    <button data-lang="uk">Українська</button>
-    <button data-lang="es">Español</button>
-    <button data-lang="de">Deutsch</button>
-    <button data-lang="it">Italiano</button>
-  </nav>
-  <section class="doc" lang="en">
-    <h1>Personal budget that keeps you on the plus side.</h1>
-    <p>Track income and expenses, split your salary into savings with proven methods, and reach your goals. Your data stays on your iPhone: no sign-up, no ads, no tracking.</p>
-    <h2>Support</h2>
-    <p>Questions, ideas or problems? Write to us: <a href="mailto:support@plusso.app">support@plusso.app</a></p>
-    <p><a href="privacy.html#en">Privacy Policy</a> · <a href="terms.html#en">Terms of Use</a></p>
+  <section class="hero">
+    <img class="hero-icon" src="img/icon.png" alt="Plusso" width="132" height="132">
+    <div><span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-sparkles"/></svg><span data-t="eyebrow">Personal budget for iPhone</span></span></div>
+    <h1 data-t="heroTitle">Stay on the plus side.</h1>
+    <p data-t="heroText">Know how much you can spend today, split your salary into savings and reach your goals. Your data stays on your iPhone: no sign-up, no ads, no tracking.</p>
+    <span class="cta"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-smartphone"/></svg><span data-t="soon">Coming soon to the App Store</span></span>
+    <span class="price-note" data-t="priceNote">Free to start · Plusso Pro from $1.99 a month</span>
   </section>
-  <section class="doc" lang="ro">
-    <h1>Bugetul personal care te ține pe plus.</h1>
-    <p>Ține evidența veniturilor și cheltuielilor, împarte salariul în economii după metode verificate și atinge-ți obiectivele. Datele rămân pe iPhone-ul tău: fără cont, fără reclame, fără urmărire.</p>
-    <h2>Asistență</h2>
-    <p>Întrebări, idei sau probleme? Scrie-ne: <a href="mailto:support@plusso.app">support@plusso.app</a></p>
-    <p><a href="privacy.html#ro">Politica de confidențialitate</a> · <a href="terms.html#ro">Termeni de utilizare</a></p>
+
+  <section class="block" id="features">
+    <h2 data-t="featuresTitle">Everything your money needs, nothing it doesn’t</h2>
+    <div class="features">
+      <article class="card feature">
+        <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-coins"/></svg></div>
+        <h3 data-t="f1t">Today’s budget</h3>
+        <p data-t="f1d">How much you can spend today, with rent and bills already set aside.</p>
+      </article>
+      <article class="card feature">
+        <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-piggy-bank"/></svg></div>
+        <h3 data-t="f2t">Split your salary</h3>
+        <p data-t="f2d">50/30/20, 6 jars or your own way. Each envelope gets its own account.</p>
+      </article>
+      <article class="card feature">
+        <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-wallet"/></svg></div>
+        <h3 data-t="f3t">All your accounts</h3>
+        <p data-t="f3d">Card, cash and savings in any currency, converted at today’s rate.</p>
+      </article>
+      <article class="card feature">
+        <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-target"/></svg></div>
+        <h3 data-t="f4t">Goals</h3>
+        <p data-t="f4d">Set the amount and the date; Plusso tells you how much to save each month.</p>
+      </article>
+      <article class="card feature">
+        <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-plane"/></svg></div>
+        <h3 data-t="f5t">Trips</h3>
+        <p data-t="f5d">A holiday budget in the local currency, tracked on its own.</p>
+      </article>
+      <article class="card feature">
+        <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-hand-coins"/></svg></div>
+        <h3 data-t="f6t">Loans</h3>
+        <p data-t="f6d">Who owes you and whom you owe, with a reminder on the due date.</p>
+      </article>
+      <article class="card feature">
+        <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-smartphone"/></svg></div>
+        <h3 data-t="f7t">Apple Pay, added by itself</h3>
+        <p data-t="f7d">Pay with your iPhone and the expense appears in Plusso, with its category.</p>
+      </article>
+      <article class="card feature">
+        <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-layout-grid"/></svg></div>
+        <h3 data-t="f8t">Widgets</h3>
+        <p data-t="f8d">Today’s budget and one-tap entries on your Home and Lock Screen.</p>
+      </article>
+    </div>
   </section>
-  <section class="doc" lang="ru">
-    <h1>Личный бюджет, который держит вас в плюсе.</h1>
-    <p>Учитывайте доходы и расходы, делите зарплату на накопления по проверенным методам и достигайте целей. Данные остаются на вашем iPhone: без регистрации, рекламы и отслеживания.</p>
-    <h2>Поддержка</h2>
-    <p>Вопросы, идеи или проблемы? Напишите нам: <a href="mailto:support@plusso.app">support@plusso.app</a></p>
-    <p><a href="privacy.html#ru">Политика конфиденциальности</a> · <a href="terms.html#ru">Условия использования</a></p>
+
+  <section class="card privacy-band">
+    <div class="tile"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-shield-check"/></svg></div>
+    <div>
+      <h2 data-t="privacyTitle">Your money, your phone.</h2>
+      <p data-t="privacyText">Everything is stored on your iPhone, with an optional backup in your own iCloud. No account, no servers, no ads, no tracking.</p>
+    </div>
   </section>
-  <section class="doc" lang="uk">
-    <h1>Особистий бюджет, що тримає вас у плюсі.</h1>
-    <p>Ведіть облік доходів і витрат, діліть зарплату на заощадження за перевіреними методами й досягайте цілей. Дані залишаються на вашому iPhone: без реєстрації, реклами й відстеження.</p>
-    <h2>Підтримка</h2>
-    <p>Запитання, ідеї чи проблеми? Напишіть нам: <a href="mailto:support@plusso.app">support@plusso.app</a></p>
-    <p><a href="privacy.html#uk">Політика конфіденційності</a> · <a href="terms.html#uk">Умови використання</a></p>
+
+  <section class="block" id="pro">
+    <h2 data-t="plansTitle">Free to start. Pro when you need more.</h2>
+    <div class="plans">
+      <article class="card plan">
+        <h3><span data-t="freeTitle">Free</span></h3>
+        <p class="sub" data-t="freePrice">Forever</p>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="free1">One account, one fixed income and one fixed expense</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="free2">Unlimited transactions and one-tap entries</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="free3">Today’s budget and spending by category</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="free4">Loans and saving challenges</span></li>
+        </ul>
+      </article>
+      <article class="card plan pro">
+        <h3><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-crown"/></svg><span data-t="proTitle">Plusso Pro</span></h3>
+        <p class="sub" data-t="proPrice">$1.99 a month, $14.99 a year (14 days free) or $34.99 once</p>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="pro1">As many accounts as you need, with transfers between them</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="pro2">Salary splitting: 50/30/20 or your own method</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="pro3">Goals, category budgets and subscriptions</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="pro4">Trips with a budget in the local currency</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg><span data-t="pro5">Receipt scanning, full reports and trends</span></li>
+        </ul>
+      </article>
+    </div>
   </section>
-  <section class="doc" lang="es">
-    <h1>El presupuesto personal que te mantiene en positivo.</h1>
-    <p>Registra ingresos y gastos, reparte tu sueldo en ahorros con métodos probados y alcanza tus metas. Tus datos se quedan en tu iPhone: sin registro, sin anuncios, sin seguimiento.</p>
-    <h2>Soporte</h2>
-    <p>¿Preguntas, ideas o problemas? Escríbenos: <a href="mailto:support@plusso.app">support@plusso.app</a></p>
-    <p><a href="privacy.html#es">Política de privacidad</a> · <a href="terms.html#es">Condiciones de uso</a></p>
+
+  <section class="block" id="faq">
+    <h2 data-t="faqTitle">Questions and answers</h2>
+    <div class="faq">
+      <details class="card">
+        <summary><span data-t="q1">Do I need Pro to have several accounts?</span><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-chevron-down"/></svg></summary>
+        <p data-t="a1">The free version has one account. Plusso Pro unlocks as many as you need (card, cash, savings, other currencies) and transfers between them. You can try them first: Settings → Guide & help → Try the demo.</p>
+      </details>
+      <details class="card">
+        <summary><span data-t="q2">Where is my data stored?</span><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-chevron-down"/></svg></summary>
+        <p data-t="a2">Only on your iPhone. If you turn on iCloud backup, a copy goes to your own iCloud Drive. We never see your data.</p>
+      </details>
+      <details class="card">
+        <summary><span data-t="q3">How do I move my data to a new iPhone?</span><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-chevron-down"/></svg></summary>
+        <p data-t="a3">Turn on iCloud backup in Settings → Data & backup and restore it on the new iPhone, or save a backup file and open it there.</p>
+      </details>
+      <details class="card">
+        <summary><span data-t="q4">I reinstalled the app. How do I get Pro back?</span><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-chevron-down"/></svg></summary>
+        <p data-t="a4">Pro comes back by itself with the same Apple account. If it doesn’t, open Plusso Pro in Settings and tap Restore.</p>
+      </details>
+      <details class="card">
+        <summary><span data-t="q5">How do I cancel my subscription?</span><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-chevron-down"/></svg></summary>
+        <p data-t="a5">In iPhone Settings → your name → Subscriptions → Plusso. You keep Pro until the end of the period you paid for.</p>
+      </details>
+    </div>
   </section>
-  <section class="doc" lang="de">
-    <h1>Das persönliche Budget, das dich im Plus hält.</h1>
-    <p>Erfasse Einnahmen und Ausgaben, teile dein Gehalt mit bewährten Methoden aufs Sparen auf und erreiche deine Ziele. Deine Daten bleiben auf deinem iPhone: keine Registrierung, keine Werbung, kein Tracking.</p>
-    <h2>Support</h2>
-    <p>Fragen, Ideen oder Probleme? Schreib uns: <a href="mailto:support@plusso.app">support@plusso.app</a></p>
-    <p><a href="privacy.html#de">Datenschutzerklärung</a> · <a href="terms.html#de">Nutzungsbedingungen</a></p>
+
+  <section class="block" id="support">
+    <div class="card support">
+      <h2 data-t="supportTitle">Support</h2>
+      <p data-t="supportText">Questions, ideas or a bug? Write to us, we read every message.</p>
+      <a class="mail" href="mailto:support@plusso.app"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-mail"/></svg>support@plusso.app</a>
+    </div>
   </section>
-  <section class="doc" lang="it">
-    <h1>Il budget personale che ti tiene in positivo.</h1>
-    <p>Registra entrate e uscite, dividi lo stipendio nei risparmi con metodi collaudati e raggiungi i tuoi obiettivi. I tuoi dati restano sul tuo iPhone: niente registrazione, niente pubblicità, niente tracciamento.</p>
-    <h2>Assistenza</h2>
-    <p>Domande, idee o problemi? Scrivici: <a href="mailto:support@plusso.app">support@plusso.app</a></p>
-    <p><a href="privacy.html#it">Informativa sulla privacy</a> · <a href="terms.html#it">Termini di utilizzo</a></p>
-  </section>
-  <footer class="muted">© 2026 Plusso</footer>
 </main>
+<footer class="foot">
+  <a href="privacy.html" data-page="privacy.html" data-t="privacy">Privacy Policy</a>
+  <a href="terms.html" data-page="terms.html" data-t="terms">Terms of Use</a>
+  <a href="mailto:support@plusso.app">support@plusso.app</a>
+  <span>© 2026 Plusso</span>
+</footer>
+<script src="text.js"></script>
 <script src="lang.js"></script>
 </body>
 </html>
